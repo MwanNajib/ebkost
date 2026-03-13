@@ -66,20 +66,21 @@ const NavLink = ({ session }: NavLinkProps) => {
                   href="/myreservation"
                   className="block py-2 px-3 text-gray-800 hover:text-orange-500 rounded-sm md:hover:bg-transparent md:p-0 transition-colors"
                 >
-                  My Reservation
+                  {isAdmin ? "Reservation" : "My Reservation"}
                 </Link>
               </li>
             )}
 
-            {/* Admin only menu in mobile */}
-            {isAdmin && open && (
-              <>
-                <li className="border-t border-gray-100 my-2 pt-2 md:hidden">
-                  <Link href="/admin/dashboard" className="block py-2 px-3 text-orange-600 font-bold">
-                    Admin Dashboard
-                  </Link>
-                </li>
-              </>
+            {/* Menu Khusus Admin di Bar Utama */}
+            {isAdmin && (
+              <li>
+                <Link
+                  href="/admin/dashboard"
+                  className="block py-2 px-3 text-orange-600 font-bold hover:text-orange-700 rounded-sm md:hover:bg-transparent md:p-0 transition-colors"
+                >
+                  Dashboard
+                </Link>
+              </li>
             )}
 
             {!session && (

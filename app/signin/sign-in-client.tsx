@@ -29,9 +29,11 @@ export default function SignInClient() {
       </div>
 
       {/* Floating dots pattern */}
-      <div className="absolute inset-0 pointer-events-none opacity-20"
+      <div
+        className="absolute inset-0 pointer-events-none opacity-20"
         style={{
-          backgroundImage: "radial-gradient(circle, #f97316 1px, transparent 1px)",
+          backgroundImage:
+            "radial-gradient(circle, #f97316 1px, transparent 1px)",
           backgroundSize: "32px 32px",
         }}
       />
@@ -55,14 +57,20 @@ export default function SignInClient() {
               Selamat Datang
             </h1>
             <p className="text-gray-500 mt-2 text-sm">
-              di <span className="font-semibold text-orange-500">EbKost</span> — Platform Booking Kost Terbaik
+              di{" "}
+              <span className="font-semibold text-orange-500">
+                E-Booking Kost
+              </span>{" "}
+              — Platform Booking Kost.
             </p>
           </div>
 
           {/* Divider */}
           <div className="flex items-center gap-3 mb-6">
             <div className="flex-1 h-px bg-gray-200" />
-            <span className="text-xs text-gray-400 font-medium uppercase tracking-widest">Masuk dengan</span>
+            <span className="text-xs text-gray-400 font-medium uppercase tracking-widest">
+              Masuk dengan
+            </span>
             <div className="flex-1 h-px bg-gray-200" />
           </div>
 
@@ -99,7 +107,7 @@ export default function SignInClient() {
 
         {/* Bottom text */}
         <p className="text-center text-xs text-gray-400 mt-6">
-          © 2026 EbKost. All rights reserved.
+          © 2026 MWAN. All rights reserved.
         </p>
       </div>
     </div>
