@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import Navbar from "@/components/navbar/navbar";
-import Footer from "@/components/footer";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -10,8 +8,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Home",
-  description: "Online Booking Kost",
+  title: {
+    default: "EbKost - Online Booking Kost",
+    template: "%s | EbKost",
+  },
+  description: "Platform booking kamar kost online terpercaya",
 };
 
 export default function RootLayout({
@@ -20,13 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="id">
       <body
         className={`${plusJakarta.className} antialiased selection:bg-orange-500 selection:text-white`}
       >
-        <Navbar />
-        <main className="bg-gray-50/50 min-h-screen">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
