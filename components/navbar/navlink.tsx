@@ -40,33 +40,47 @@ const NavLink = ({ session }: NavLinkProps) => {
                 href="/"
                 className="block py-2 px-3 text-gray-800 hover:text-orange-500 rounded-sm md:hover:bg-transparent md:p-0 transition-colors"
               >
-                Home
+                Beranda
               </Link>
             </li>
             <li>
               <Link
-                href="/about"
+                href="/#about"
                 className="block py-2 px-3 text-gray-800 hover:text-orange-500 rounded-sm md:hover:bg-transparent md:p-0 transition-colors"
               >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/rooms"
-                className="block py-2 px-3 text-gray-800 hover:text-orange-500 rounded-sm md:hover:bg-transparent md:p-0 transition-colors"
-              >
-                Rooms
+                Tentang Kami
               </Link>
             </li>
 
-            {session && (
+            {/* Kamar Kost — hanya untuk tamu & user biasa, admin tidak perlu karena ada di dashboard */}
+            {!isAdmin && (
               <li>
                 <Link
-                  href="/myreservation"
+                  href="/#rooms"
                   className="block py-2 px-3 text-gray-800 hover:text-orange-500 rounded-sm md:hover:bg-transparent md:p-0 transition-colors"
                 >
-                  {isAdmin ? "Reservation" : "My Reservation"}
+                  Kamar Kost
+                </Link>
+              </li>
+            )}
+
+            <li>
+              <Link
+                href="/#contact"
+                className="block py-2 px-3 text-gray-800 hover:text-orange-500 rounded-sm md:hover:bg-transparent md:p-0 transition-colors"
+              >
+                Hubungi Kami
+              </Link>
+            </li>
+
+
+            {session && !isAdmin && (
+              <li>
+                <Link
+                  href="/my-reservation"
+                  className="block py-2 px-3 text-gray-800 hover:text-orange-500 rounded-sm md:hover:bg-transparent md:p-0 transition-colors"
+                >
+                  Pesanan Saya
                 </Link>
               </li>
             )}
@@ -89,7 +103,7 @@ const NavLink = ({ session }: NavLinkProps) => {
                   href="/signin"
                   className="inline-block py-2.5 px-6 bg-orange-400 text-white font-bold hover:bg-orange-500 rounded-lg shadow-md shadow-orange-200 transition-all active:scale-95"
                 >
-                  Sign In
+                  Masuk Akun
                 </Link>
               </li>
             )}
@@ -108,7 +122,7 @@ const NavLink = ({ session }: NavLinkProps) => {
                   {session.user?.name || "User"}
                 </p>
                 <p className="text-[10px] text-gray-500 leading-tight">
-                  {isAdmin ? "Administrator" : "Member"}
+                  {isAdmin ? "Administrator" : "Member Akun"}
                 </p>
               </div>
               <div className="size-9 rounded-full overflow-hidden border-2 border-white shadow-sm">
@@ -139,7 +153,7 @@ const NavLink = ({ session }: NavLinkProps) => {
                     className="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
                   >
                     <IoGridOutline size={18} />
-                    <span>Dashboard Admin</span>
+                    <span>Panel Dashboard</span>
                   </Link>
                 )}
 

@@ -13,6 +13,10 @@ export const metadata: Metadata = {
     template: "%s | EbKost",
   },
   description: "Platform booking kamar kost online terpercaya",
+  icons: {
+    icon: "/vercel.svg",
+    shortcut: "/vercel.svg",
+  },
 };
 
 export default function RootLayout({
