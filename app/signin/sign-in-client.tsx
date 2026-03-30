@@ -45,12 +45,9 @@ export default function SignInClient() {
           className="relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl shadow-orange-200/40 border border-white/60 overflow-hidden"
           style={{ padding: "48px 40px" }}
         >
-          {/* Top gradient bar */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-orange-400 via-amber-400 to-orange-500" />
-
           {/* Logo & Brand */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-linear-to-br from-orange-400 to-orange-600 shadow-lg shadow-orange-300/50 mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-lg bg-linear-to-br from-orange-400 to-orange-600 shadow-lg shadow-orange-300/50 mb-4">
               <MdApartment className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-3xl font-bold text-gray-900 tracking-tight">
