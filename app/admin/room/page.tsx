@@ -5,6 +5,8 @@ import { IoPencilOutline, IoTrashOutline, IoEyeOutline } from "react-icons/io5";
 import DeleteRoomButton from "@/components/admin/room/delete-button";
 import ToggleAvailabilityButton from "@/components/admin/room/toggle-availability-button";
 
+export const dynamic = 'force-dynamic';
+
 export default async function RoomListPage() {
   const rooms = await prisma.room.findMany({
     orderBy: { createdAt: "desc" },

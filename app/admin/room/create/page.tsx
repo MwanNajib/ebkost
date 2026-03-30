@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import CreateForm from "@/components/admin/room/create-form";
 
+export const dynamic = 'force-dynamic';
+
 export default async function CreateRoomPage() {
   // Check and seed Amenities if empty or if it needs reset (Kost context)
   let amenities = await prisma.amenities.findMany();
